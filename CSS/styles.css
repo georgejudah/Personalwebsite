@@ -37,12 +37,12 @@ hr{
 a{
   color: #11999E;
   font-family: 'Montserrat', sans-serif;
-  margin: 10px 20px;
+  /* margin: 10px 20px; */
   text-decoration: none;
 
 }
 a:hover{
-  color: #EAF6F6;
+  color: #0078D7;
 }
 
 .top-container {
@@ -147,6 +147,9 @@ header {
   right: 0;
   left: 0;
   border-bottom: 1px solid #e3e3e8;
+}
+.footer-link {
+  margin: 10px 20px;
 }
 #logo {
   float: left;
