@@ -271,14 +271,110 @@
     });
   }
 
+  // ── Page Loader ────────────────────────────────────────────
+  function initLoader() {
+    const loader = document.getElementById('loader');
+    if (!loader) return;
+
+    const hide = () => {
+      loader.classList.add('loader--hidden');
+      // Remove from DOM after transition
+      loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+    };
+
+    // Hide after ~1.4s regardless of load state (matches animation)
+    if (document.readyState === 'complete') {
+      setTimeout(hide, 300);
+    } else {
+      window.addEventListener('load', () => setTimeout(hide, 300));
+      // Fallback
+      setTimeout(hide, 2500);
+    }
+  }
+
+  // ── Custom Cursor ──────────────────────────────────────────
+  function initCustomCursor() {
+    // Only on pointer:fine (desktop with mouse)
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursor-follower');
+    if (!cursor || !follower) return;
+
+    let mouseX = 0, mouseY = 0;
+    let followerX = 0, followerY = 0;
+    let raf;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top  = mouseY + 'px';
+    });
+
+    // Smooth follower via rAF
+    function animateFollower() {
+      followerX += (mouseX - followerX) * 0.12;
+      followerY += (mouseY - followerY) * 0.12;
+      follower.style.left = followerX + 'px';
+      follower.style.top  = followerY + 'px';
+      raf = requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+
+    // Hover state on interactive elements
+    const hoverTargets = 'a, button, .bento__card, .gallery__card, .skill-pill, .stat__card, .edu-card';
+    document.querySelectorAll(hoverTargets).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('cursor--hover');
+        follower.classList.add('cursor-follower--hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor--hover');
+        follower.classList.remove('cursor-follower--hover');
+      });
+    });
+
+    // Hide when mouse leaves window
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+      follower.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = '1';
+      follower.style.opacity = '';
+    });
+  }
+
+  // ── Back to Top ────────────────────────────────────────────
+  function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // ── Initialize Everything ─────────────────────────────────
   function init() {
+    initLoader();
     initTheme();
     initNav();
     initScrollReveal();
     initParallax();
     initActiveNav();
     initLightbox();
+    initCustomCursor();
+    initBackToTop();
   }
 
   // Run on DOM ready
@@ -288,4 +384,5 @@
     init();
   }
 })();
+
 
