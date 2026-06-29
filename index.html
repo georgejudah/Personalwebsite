@@ -3,121 +3,631 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Judah George</title>
-  <link rel="stylesheet" href="CSS/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judah George — Full-Stack Developer & AI Engineer</title>
+  <meta name="description" content="Innovative Full-Stack Developer & DevOps Leader specializing in automation, SRE tooling, scalable architectures, and Agentic AI. 4.5+ years of experience.">
+  <meta name="author" content="Judah George">
+  <meta name="keywords" content="Full-Stack Developer, AI Engineer, React, Python, FastAPI, LangGraph, DevOps, SRE">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Judah George — Full-Stack Developer & AI Engineer">
+  <meta property="og:description" content="Innovative Full-Stack Developer & DevOps Leader specializing in automation, SRE tooling, and Agentic AI.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
   <link rel="icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/42fb8fe6b1.js" crossorigin="anonymous"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="CSS/styles.css">
 </head>
 
 <body>
-  <div class="top-container" id="profile">
-    <header>
-      <a id="logo" href="#">Hi</a>
-      <nav>
-        <ul>
-          <li><a href="#profile" id="current">Home</a></li>
-          <div class="dropdown">
-            <li><a id="projects" href="html/webdev.html">projects 🔽</a></li>
-            <div class="dropdown-content">
-              <a href="html/webdev.html">Web Development</a>
-              <a href="#">Python</a>
-              <a href="#">Cyber Security</a>
-              <a href="#">Data Science</a>
-              <a href="html/ai.html">AI</a>
+
+  <!-- ════════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" aria-label="Judah George — Home">JG</a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="#projects" class="nav__link">Work</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="icon-moon">🌙</span>
+            <span class="icon-sun">☀️</span>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Mobile -->
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile-menu" id="mobile-menu">
+      <a href="#projects">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle theme-toggle--mobile" aria-label="Toggle dark mode">
+        <span class="icon-moon">🌙</span>
+        <span class="icon-sun">☀️</span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__content">
+      <p class="hero__greeting">Software Developer · 4.5+ Years</p>
+      <h1 class="hero__name">Judah George.</h1>
+      <p class="hero__title">Full-Stack Developer & AI Engineer</p>
+      <p class="hero__description">
+        Innovative developer specializing in automation, SRE tooling, and scalable architectures. 
+        Building intelligent, user-centric applications with Python, React, and Agentic AI — 
+        shipping production code at high velocity with uncompromising quality.
+      </p>
+      <div class="hero__cta-row">
+        <a href="#projects" class="btn btn--primary">View My Work</a>
+        <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       PROJECTS — BENTO GRID
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="section__label reveal">Selected Work</p>
+      <h2 class="section__title reveal">Things I've Built.</h2>
+      <p class="section__subtitle reveal">Products, platforms, and tools — from relationship safety to autonomous code generation.</p>
+
+      <div class="bento stagger">
+
+        <!-- Card 1 — CheckYourRelationship (wide) -->
+        <a href="https://checkyourrelationship.com" target="_blank" rel="noopener noreferrer" class="bento__card bento__card--wide reveal">
+          <div>
+            <div class="bento__icon">💑</div>
+            <div class="bento__stat">
+              <span>●</span> ~1,500 monthly users
+            </div>
+            <h3 class="bento__title">CheckYourRelationship.com</h3>
+            <p class="bento__desc">
+              Privacy-first relationship safety platform featuring a 37-question red flag detector, 
+              character assessment, and deal-breaker tool. Architected an autonomous AI Agent and RAG pipeline 
+              using LangGraph and pgvector with Gemini 2.5 for hallucination-free coaching, 
+              cross-referencing vectorized community data for verified guidance.
+            </p>
+            <div class="bento__tags">
+              <span class="bento__tag">React 19</span>
+              <span class="bento__tag">FastAPI</span>
+              <span class="bento__tag">LangGraph</span>
+              <span class="bento__tag">pgvector</span>
+              <span class="bento__tag">Gemini 2.5</span>
+              <span class="bento__tag">Redis</span>
             </div>
           </div>
-          <li><a href="#contact-me">Contact Me</a></li>
-          <li><a href="https://github.com/georgejudah" id="fb" target="_blank" rel="noopener noreferrer" >Github <i class="fab fa-github fa-lg"></i> </a></li>
-        </ul>
-      </nav>
-    </header>
-    <img class="top-cloud" src="images/cloud.png" alt="cloud_img">
-    <h1>I'm Judah.</h1>
-    <h2>A <span class="Pro">Full-Stack</span> Developer.</h2>
-    <img class="bottom-cloud" src="images/cloud.png" alt="cloud_img">
-    <img src="images/mountain.png" alt="mountain">
+          <span class="bento__link">
+            Visit Live Site <span class="bento__link-arrow">↗</span>
+          </span>
+        </a>
+
+        <!-- Card 2 — Autonomous AI Coding Agent -->
+        <a href="https://github.com/georgejudah/developer-agents-workflow" target="_blank" rel="noopener noreferrer" class="bento__card reveal">
+          <div>
+            <div class="bento__icon">🤖</div>
+            <div class="bento__stat">
+              <span>●</span> 100+ Autonomous PRs
+            </div>
+            <h3 class="bento__title">Autonomous AI Coding Agent</h3>
+            <p class="bento__desc">
+              Fully autonomous coding agent that reads Jira-style tickets and ships GitHub PRs with zero human intervention. 
+              Aider-style repo mapping via Universal Ctags, Search/Replace patch format, 
+              exposed as both CLI and REST API via FastAPI.
+            </p>
+            <div class="bento__tags">
+              <span class="bento__tag">Python</span>
+              <span class="bento__tag">LangGraph</span>
+              <span class="bento__tag">DeepSeek</span>
+              <span class="bento__tag">Supabase</span>
+              <span class="bento__tag">GitHub API</span>
+            </div>
+          </div>
+          <span class="bento__link">
+            View on GitHub <span class="bento__link-arrow">↗</span>
+          </span>
+        </a>
+
+        <!-- Card 3 — Agentic AI Portal (Comcast) -->
+        <div class="bento__card reveal">
+          <div>
+            <div class="bento__icon">🧠</div>
+            <div class="bento__stat">
+              <span>●</span> 500+ Monthly Users
+            </div>
+            <h3 class="bento__title">Agentic AI Portal</h3>
+            <p class="bento__desc">
+              Enterprise AI agent interaction platform at Comcast — self-service portal for AI agent onboarding 
+              used across Reliability and TPX organizations. Drove 7,000+ monthly AI conversations 
+              by improving UI/UX and replacing manual integration processes.
+            </p>
+            <div class="bento__tags">
+              <span class="bento__tag">React</span>
+              <span class="bento__tag">TypeScript</span>
+              <span class="bento__tag">FastAPI</span>
+            </div>
+          </div>
+          <span class="bento__link" style="color: var(--text-tertiary);">
+            Enterprise · Internal
+          </span>
+        </div>
+
+        <!-- Card 4 — Social Media App (MERNG) -->
+        <a href="https://github.com/georgejudah/socialmedia_MERNG" target="_blank" rel="noopener noreferrer" class="bento__card reveal">
+          <div>
+            <div class="bento__icon">💬</div>
+            <h3 class="bento__title">Social Media App</h3>
+            <p class="bento__desc">
+              Full-stack social platform on the MERNG stack — real-time posts, interactions, 
+              and secure JWT authentication with GraphQL/Apollo queries.
+            </p>
+            <div class="bento__tags">
+              <span class="bento__tag">React</span>
+              <span class="bento__tag">GraphQL</span>
+              <span class="bento__tag">MongoDB</span>
+              <span class="bento__tag">Node.js</span>
+            </div>
+          </div>
+          <span class="bento__link">
+            View on GitHub <span class="bento__link-arrow">↗</span>
+          </span>
+        </a>
+
+        <!-- Card 5 — SRE Automation (Comcast) -->
+        <div class="bento__card reveal">
+          <div>
+            <div class="bento__icon">⚡</div>
+            <h3 class="bento__title">SRE Python Automation</h3>
+            <p class="bento__desc">
+              Auto-remediation tool reconciling 300+ change tickets daily, saving 15 hours/week. 
+              Network anomaly detection (Z-Score) catching issues within 15 minutes. 
+              Monitoring engine validating ~60,000 change tickets with Grafana dashboards.
+            </p>
+            <div class="bento__tags">
+              <span class="bento__tag">Python</span>
+              <span class="bento__tag">Grafana</span>
+              <span class="bento__tag">Elastic Search</span>
+              <span class="bento__tag">Z-Score</span>
+            </div>
+          </div>
+          <span class="bento__link" style="color: var(--text-tertiary);">
+            Enterprise · Internal
+          </span>
+        </div>
+
+        <!-- Card 6 — Generative AI Projects (wide) -->
+        <a href="https://github.com/georgejudah/gen_ai_projects" target="_blank" rel="noopener noreferrer" class="bento__card bento__card--wide reveal">
+          <div>
+            <div class="bento__icon">✨</div>
+            <h3 class="bento__title">Generative AI Projects</h3>
+            <p class="bento__desc">
+              Collection of practical AI applications: marketing brochure generators, intelligent customer support bots, 
+              RAG systems with LangChain and vector databases, AI-powered code optimization tools, 
+              and budget trackers with financial document analysis. Working with transformers, tokenizers, and model pipelines.
+            </p>
+            <div class="bento__tags">
+              <span class="bento__tag">OpenAI</span>
+              <span class="bento__tag">LangChain</span>
+              <span class="bento__tag">Hugging Face</span>
+              <span class="bento__tag">RAG</span>
+              <span class="bento__tag">Gradio</span>
+              <span class="bento__tag">Vector DBs</span>
+            </div>
+          </div>
+          <span class="bento__link">
+            View on GitHub <span class="bento__link-arrow">↗</span>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       EXPERIENCE — TIMELINE
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" id="experience" style="background: var(--bg-secondary); transition: background var(--transition-base);">
+    <div class="container">
+      <p class="section__label reveal">Career</p>
+      <h2 class="section__title reveal">Experience.</h2>
+
+      <div class="timeline reveal">
+
+        <!-- Comcast -->
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <span class="timeline__date">Mar 2022 — Present</span>
+          <h3 class="timeline__role">Full-Stack Developer</h3>
+          <p class="timeline__company">Comcast · Philadelphia, PA</p>
+          <ul class="timeline__bullets">
+            <li>Led full-stack development of the Agentic AI Portal using React, TypeScript, and Python (FastAPI), driving platform adoption to 500+ monthly users and 7,000+ monthly AI conversations.</li>
+            <li>Implemented automated expiration workflows for an enterprise SSL monitoring application tracking 200,000+ certificates, preventing high-impact service outages through proactive alerting.</li>
+            <li>Built SRE Python auto-remediation tool reconciling 300+ change tickets daily, saving Ops team 15 hours of manual effort weekly.</li>
+            <li>Developed Python monitoring engine validating ~60,000 change tickets, surfacing analytics to Senior Leadership via Grafana dashboards.</li>
+            <li>Managed complex internal Cloud Migrations, paving path for team-wide application migration.</li>
+            <li>Developed Network Anomaly Detection tool (Z-Score Model) catching issues in routers and firewalls within 15 minutes, before user reports.</li>
+          </ul>
+        </div>
+
+        <!-- Flextronics -->
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <span class="timeline__date">Sep 2021 — Dec 2021</span>
+          <h3 class="timeline__role">IT Trainee · Systems Analyst</h3>
+          <p class="timeline__company">Flextronics</p>
+          <ul class="timeline__bullets">
+            <li>Finance Support team supporting 300+ sites across the globe.</li>
+            <li>Operated with internal and vendor finance tools (Bellin, EAM, RMS), modifying and updating financial records using Microsoft MySQL Databases.</li>
+          </ul>
+        </div>
+
+        <!-- Give The World -->
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <span class="timeline__date">Jul — Aug 2021</span>
+          <h3 class="timeline__role">Web Developer</h3>
+          <p class="timeline__company">Give The World Charity · Sweden</p>
+          <ul class="timeline__bullets">
+            <li>Engineered the web presence for a charity aiding children's education and women's empowerment in South Africa.</li>
+            <li>Designed and developed multilingual webpages using WordPress with custom CSS, improving traffic by 20% and contributing to 5K USD in donations.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       RECOGNITION — APPRECIATION GALLERY
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" id="recognition">
+    <div class="container">
+      <p class="section__label reveal">Recognition</p>
+      <h2 class="section__title reveal">Kind Words & Awards.</h2>
+      <p class="section__subtitle reveal">Appreciation from leadership and peers at Comcast for going above and beyond.</p>
+
+      <div class="gallery__grid stagger">
+
+        <!-- 1 — IOP Recognition Award -->
+        <div class="gallery__card reveal" data-gallery="0">
+          <div class="gallery__expand">⤢</div>
+          <img
+            class="gallery__img"
+            src="images/All Hands IOP Recognition Award Winners.png"
+            alt="IOP Recognition Award — The Extra Mile Medal"
+            loading="lazy"
+          >
+          <div class="gallery__caption">
+            <div class="gallery__caption-title">The Extra Mile Medal</div>
+            <div class="gallery__caption-sub">IOP Recognition Award · May 2025</div>
+          </div>
+        </div>
+
+        <!-- 2 — Sabarish appreciation -->
+        <div class="gallery__card reveal" data-gallery="1">
+          <div class="gallery__expand">⤢</div>
+          <img
+            class="gallery__img"
+            src="images/Sabarish appreciation.png"
+            alt="Appreciation from Sabarish — overnight critical fix"
+            loading="lazy"
+          >
+          <div class="gallery__caption">
+            <div class="gallery__caption-title">Overnight Critical Fix</div>
+            <div class="gallery__caption-sub">Sabarish · IOP Engineering</div>
+          </div>
+        </div>
+
+        <!-- 3 — Mike appreciation -->
+        <div class="gallery__card reveal" data-gallery="2">
+          <div class="gallery__expand">⤢</div>
+          <img
+            class="gallery__img"
+            src="images/Appreciation from Mike.png"
+            alt="Appreciation from Mike Lindinger for automation work"
+            loading="lazy"
+          >
+          <div class="gallery__caption">
+            <div class="gallery__caption-title">Automation Excellence</div>
+            <div class="gallery__caption-sub">Mike Lindinger · DAA Change Management</div>
+          </div>
+        </div>
+
+        <!-- 4 — SRE Revere Duplicates -->
+        <div class="gallery__card reveal" data-gallery="3">
+          <div class="gallery__expand">⤢</div>
+          <img
+            class="gallery__img"
+            src="images/SRE George - Revere duplicates.png"
+            alt="SRE monitoring — 3 AM Revere duplicate detection"
+            loading="lazy"
+          >
+          <div class="gallery__caption">
+            <div class="gallery__caption-title">3 AM Monitoring Deployment</div>
+            <div class="gallery__caption-sub">Revere Duplicate Detection · SRE</div>
+          </div>
+        </div>
+
+        <!-- 5 — Team reactions -->
+        <div class="gallery__card reveal" data-gallery="4">
+          <div class="gallery__expand">⤢</div>
+          <img
+            class="gallery__img"
+            src="images/SRE George 3 AM Revere duplicates - reactions.png"
+            alt="Team reactions for late-night monitoring work"
+            loading="lazy"
+          >
+          <div class="gallery__caption">
+            <div class="gallery__caption-title">Team Reactions</div>
+            <div class="gallery__caption-sub">Late-night monitoring · SRE</div>
+          </div>
+        </div>
+
+        <!-- 6 — Negotiation -->
+        <div class="gallery__card reveal" data-gallery="5">
+          <div class="gallery__expand">⤢</div>
+          <img
+            class="gallery__img"
+            src="images/Appreciation for negotiating with Bret's team Mozart for lifting the API limit.png"
+            alt="Appreciation for API limit negotiation"
+            loading="lazy"
+          >
+          <div class="gallery__caption">
+            <div class="gallery__caption-title">Great Negotiator</div>
+            <div class="gallery__caption-sub">API Limit Negotiation · Cross-team</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous">‹</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next">›</button>
+    <span class="lightbox__counter" id="lightbox-counter"></span>
+    <div class="lightbox__inner">
+      <img class="lightbox__img" id="lightbox-img" src="" alt="">
+      <div class="lightbox__caption">
+        <div class="lightbox__caption-title" id="lightbox-title"></div>
+        <div class="lightbox__caption-sub" id="lightbox-sub"></div>
+      </div>
+    </div>
   </div>
 
 
-  <div class="middle-container">
-    <div class="profile">
-      <img src="images/profpic.png" alt="profilepic" height="150px">
-      <h2>Hello.</h2>
-      <p class="intro">I am a Full-Stack💻 developer and a Python 🐍 Developer.I am Kind,I am smart,I am important and I love to make my own coffee ☕ </p>
-    </div>
-    <hr>
-    <div class="skills">
-      <h2>My Skills.</h2>
-      <div class="skill-row">
-        <img class="code" src="images/code.gif" alt="code">
-        <h3>Full-Stack Development</h3>
-        <p>I started learning to code so i can make my own apps and games.Overtime, i have gained a wealth of experience desingning and developing mobile and Full-Stack Web applications. I am a
-          Skilled MERN/MERNG Stack Web Developer eager to join a creative, problem solving team. Ability to learn and implementing new technologies quickly. My skills include HTML5, CSS3, Python, JavaScript, Java, React JS, Wordpress, JQuery, Node
-          JS,Express JS, working with Mongo, mongoose and SQL databases and testing using Mocha and Chai. I make REST APIs for a living and survive on coffee</p>
+  <!-- ════════════════════════════════════════════════════════
+       ABOUT
+       ════════════════════════════════════════════════════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section__label reveal">About</p>
+      <h2 class="section__title reveal">A Bit About Me.</h2>
+
+      <div class="about__grid">
+
+        <!-- Photo -->
+        <div class="about__photo-wrapper reveal--left">
+          <div class="about__photo-glow"></div>
+          <img
+            class="about__photo"
+            src="images/profpic.png"
+            alt="Judah George — Profile Photo"
+            loading="lazy"
+          >
+        </div>
+
+        <!-- Content -->
+        <div class="reveal--right">
+          <p class="about__bio">
+            I'm a Full-Stack Developer and DevOps Leader based in the US with 4.5+ years of experience 
+            building scalable, operationally critical software. I specialize in Python (FastAPI), 
+            React/TypeScript, and Agentic AI — focused on bridging the gap between exceptional 
+            user experience and real business outcomes.
+          </p>
+          <p class="about__bio">
+            At Comcast, I lead cross-functional teams to deliver automation, SRE tooling, and 
+            enterprise AI platforms. On the side, I ship products people actually use — like 
+            CheckYourRelationship.com, empowering 1,500+ monthly users with AI-powered safety tools.
+          </p>
+          <p class="about__bio" style="margin-bottom: var(--space-xl);">
+            I believe in high-ownership, high-velocity development. I ship production code using 
+            AI-native workflows (Cursor, Claude Code, GitHub Copilot) to accelerate every 
+            development lifecycle. US Citizen, W-2 eligible, open to immediate relocation.
+          </p>
+
+          <!-- Stats -->
+          <div class="stats">
+            <div class="stat__card reveal--scale">
+              <div class="stat__number">4.5+</div>
+              <div class="stat__label">Years Experience</div>
+            </div>
+            <div class="stat__card reveal--scale">
+              <div class="stat__number">100+</div>
+              <div class="stat__label">Autonomous PRs Shipped</div>
+            </div>
+            <div class="stat__card reveal--scale">
+              <div class="stat__number">7K+</div>
+              <div class="stat__label">Monthly AI Conversations</div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <h3 style="font-size: var(--fs-h3); font-weight: 700; letter-spacing: -0.02em; margin-bottom: var(--space-md); color: var(--text-primary);">
+            Skills & Technologies
+          </h3>
+          <div class="skills__cloud">
+            <span class="skill-pill skill-pill--accent">Python</span>
+            <span class="skill-pill skill-pill--accent">React</span>
+            <span class="skill-pill skill-pill--accent">TypeScript</span>
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">Flask</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill skill-pill--accent">LangGraph</span>
+            <span class="skill-pill">Agentic AI</span>
+            <span class="skill-pill">N8N</span>
+            <span class="skill-pill">Cursor</span>
+            <span class="skill-pill">GitHub Copilot</span>
+            <span class="skill-pill">GoLang</span>
+            <span class="skill-pill">PostgreSQL</span>
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">Elastic Search</span>
+            <span class="skill-pill">Grafana</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">AWS (EC2, S3)</span>
+            <span class="skill-pill">TailwindCSS</span>
+            <span class="skill-pill">Data Science</span>
+          </div>
+
+          <!-- Education & Certs -->
+          <h3 style="font-size: var(--fs-h3); font-weight: 700; letter-spacing: -0.02em; margin-top: var(--space-2xl); margin-bottom: var(--space-sm); color: var(--text-primary);">
+            Education
+          </h3>
+          <div class="edu-grid">
+            <div class="edu-card reveal--scale">
+              <div class="edu-card__icon">🎓</div>
+              <div class="edu-card__title">St Joseph's College of Engineering</div>
+              <div class="edu-card__subtitle">B.E. in Electronics & Communication · 2017–2021</div>
+            </div>
+            <div class="edu-card reveal--scale">
+              <div class="edu-card__icon">🏛️</div>
+              <div class="edu-card__title">University of Pennsylvania</div>
+              <div class="edu-card__subtitle">Specialization in AI for Business</div>
+            </div>
+          </div>
+
+          <h3 style="font-size: var(--fs-h3); font-weight: 700; letter-spacing: -0.02em; margin-top: var(--space-xl); margin-bottom: var(--space-sm); color: var(--text-primary);">
+            Certifications
+          </h3>
+          <div class="cert-list">
+            <span class="cert-pill">CompTIA Security+</span>
+            <span class="cert-pill">UPenn — AI in Business</span>
+            <span class="cert-pill">Agentic AI</span>
+            <span class="cert-pill">LangGraph / LangChain</span>
+            <span class="cert-pill">Cambridge Business English</span>
+          </div>
+
+        </div>
       </div>
-      <div class="skill-row">
-        <img class="football" src="images/realmadrid.gif" alt="football">
-        <h3>Football</h3>
-        <p>I love to play soccer.I've Been Playing soccer right from my childhood.If you're a Real Madrid Fan,cheers!</p>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       CONTACT
+       ════════════════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section__label reveal" style="text-align: center;">Contact</p>
+      <h2 class="contact__title reveal">Let's Build Something.</h2>
+      <p class="contact__text reveal">
+        I'm always open to new opportunities, interesting projects, and meaningful conversations. 
+        Let's connect.
+      </p>
+      <div class="reveal">
+        <a href="mailto:georgejudah5@gmail.com" class="contact__email">georgejudah5@gmail.com</a>
+      </div>
+      <div class="reveal" style="margin-top: var(--space-lg);">
+        <a href="mailto:georgejudah5@gmail.com" class="btn btn--primary">Drop Me a Mail</a>
       </div>
     </div>
-    <hr>
-    <div class="skills" id="portfolio">
-      <h2>My Projects.</h2>
-      <div class="skill-row">
-        <i class="fas fa-heartbeat fa-5x" style="width:25%; float:left; margin-right:30px;"></i>
-        <h3>CheckYourRelationship.com</h3>
-        <p>Built a privacy-first relationship safety platform (React 19, TypeScript, Supabase/PostgreSQL) featuring a 37-question red flag detector, character assessment, and deal-breaker tool with Avg 374 views/week.</p>
-        <ul>
-          <li>Integrated Gemini 2.5 Flash AI via a context-aware "Clarity" coach component that injects quiz risk scores and safety flags into dynamic system prompts for personalized responses.</li>
-          <li>End-to-End Ownership: Managed the complete product lifecycle from UX design to backend database schema, prioritizing zero-latency interactions and strict data privacy for sensitive user inputs.</li>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">Judah George</div>
+        <p class="footer__brand-tagline">
+          Full-Stack Developer & AI Engineer building intelligent, 
+          scalable applications with relentless attention to quality.
+        </p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Navigation</h4>
+        <ul class="footer__links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-        <p><span class="Pro">Check it out here </span> -<a href="https://checkyourrelationship.com">CheckYourRelationship.com</a></p>
       </div>
-      <div class="skill-row">
-        <img class="code" src="images/social-media-merng.gif" alt="social-media app">
-        <h3>Social Media App</h3>
-        <p>Created this MERNG Stack Web Application where users can register/login to add new posts and interact by liking, disliking and commenting to each posts. Front-end using React, Node/Express for the Back-end, MongoDB and Mongoose for
-          database and models, GraphQL and Apollo for quering, JWT and bcrypt to manage user authentication. <span class="Pro">Check it out here </span> -<a href="https://optimistic-lewin-04ebc5.netlify.app/">Socialmedia101</a> </p>
-
-      </div>
-      <div class="skill-row">
-        <i class="fas fa-robot fa-5x" style="width:25%; float:left; margin-right:30px;"></i>
-        <h3>Developer Agents Workflow - Autonomous Code Generation</h3>
-        <p>An intelligent multi-agent system that autonomously handles software development tasks from ticket to pull request. <span class="Pro">Check it out here </span> -<a href="https://github.com/georgejudah/developer-agents-workflow">GitHub</a></p>
-        <ul>
-          <li><b>Autonomous Development</b>: AI agents (coder, QA, PR) work together to implement features and fix bugs</li>
-          <li><b>LLM-Driven Intelligence</b>: Uses DeepSeek/Ollama for context-aware code generation and smart file selection</li>
-          <li><b>Smart QA Validation</b>: LLM decides what tests to run based on patch analysis</li>
-          <li><b>Self-Healing System</b>: Automatically retries with context-aware error messages when builds fail</li>
-          <li><b>Multi-File Patches</b>: Generates Search/Replace blocks for precise code modifications</li>
-          <li><b>LangGraph Orchestration</b>: StateGraph workflow with conditional routing between agents</li>
-          <li><b>Supabase & GitHub Integration</b>: Persistent state management and automatic PR creation</li>
+      <div>
+        <h4 class="footer__heading">Connect</h4>
+        <ul class="footer__links">
+          <li><a href="https://www.linkedin.com/in/judah-george-007/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/georgejudah" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.instagram.com/judah_george/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
-        <p><b>Tech Stack:</b> Python 3.14, LangGraph, OpenAI/OpenRouter, Supabase, GitHub API, Playwright</p>
       </div>
     </div>
-    <hr>
-    <div class="contact-me" id="contact-me">
-      <h2>Get In Touch</h2>
-      <h3>Do You love to code and eat ?</h3>
-      <p class="contact-message">Love to code as much a I do? Let's talk about how awesome they are! We can code while we eat!</p>
-      <a class="btn" href="mailto:georgejudah5@gmail.com">DROP ME A MAIL</a>
+
+    <hr class="footer__divider">
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 Judah George. Crafted with precision.</p>
+      <div class="footer__socials">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/judah-george-007/" target="_blank" rel="noopener noreferrer" class="footer__social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/georgejudah" target="_blank" rel="noopener noreferrer" class="footer__social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/judah_george/" target="_blank" rel="noopener noreferrer" class="footer__social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/></svg>
+        </a>
+      </div>
     </div>
-  </div>
+  </footer>
 
 
-  <div class="bottom-container">
-    <a class="footer-link" href="https://www.linkedin.com/in/judah-george-626968178/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fa-2x fa-inverse"></i></a>
-    <a class="footer-link" href="https://www.instagram.com/judah_george/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fa-2x fa-inverse"></i></a>
-    <a class="footer-link" href="https://github.com/georgejudah" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-2x fa-inverse"></i></a>
-    <p class="copyright">© 2022 Judah George.</p>
-  </div>
-
-
-
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 
 </body>
 
